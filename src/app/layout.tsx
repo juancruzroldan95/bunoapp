@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { lusitana } from '@/app/ui/fonts';
 import './globals.css';
+import PageHeader from '@/components/page-header';
 
 export const metadata: Metadata = {
   title: 'Buno',
@@ -12,7 +13,10 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className={`${lusitana.className} antialiased`}>{children}</body>
+      <body className={`${lusitana.className} antialiased`}>
+        <PageHeader />
+        {children}
+      </body>
     </html>
   );
 }
