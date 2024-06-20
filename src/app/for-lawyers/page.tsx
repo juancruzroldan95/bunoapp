@@ -11,7 +11,7 @@ export default function ForLawyersPage() {
       >
         <div className="lg:w-1/2 px-4">
           <h2
-            className={`${inter.className} text-5xl font-bold text-center text-slate-800`}
+            className={`${inter.className} text-4xl font-bold text-center text-slate-800`}
           >
             <strong>Crecé profesionalmente</strong>
           </h2>
@@ -20,7 +20,7 @@ export default function ForLawyersPage() {
             cartera de clientes y generá más ingresos.
           </p>
           <div className="mt-4 flex justify-center">
-            <Button size="lg" className="text-lg font-bold">
+            <Button size="lg" className="text-xl font-bold">
               Aplicá como abogado
             </Button>
           </div>

@@ -6,7 +6,7 @@ const legalCategories = [
   { name: 'Familia', icon: '👪' },
   { name: 'Penal', icon: '⚖️' },
   { name: 'Corporativo', icon: '🏢' },
-  { name: 'Propiedad intelectual', icon: '💡' },
+  { name: 'Propiedad', icon: '💡' },
   { name: 'Migraciones', icon: '🛂' },
   { name: 'Trabajo', icon: '💼' },
   { name: 'Desalojo', icon: '🏡' },
@@ -59,7 +59,7 @@ export default function HomePage() {
         id="legal-areas"
         className="py-12 bg-slate-100 flex flex-col justify-center items-center"
       >
-        <div className="lg:w-3/4">
+        <div className="">
           <h2 className="text-3xl font-bold text-center mb-8">
             Nuestras áreas legales
           </h2>
@@ -67,7 +67,7 @@ export default function HomePage() {
             {legalCategories.map((category, index) => (
               <div
                 key={index}
-                className="bg-white rounded-lg shadow-md flex flex-col items-center justify-center text-center hover:shadow-lg aspect-square"
+                className="bg-white p-2 max-w-56 rounded-lg shadow-md flex flex-col items-center justify-center text-center hover:shadow-lg aspect-square lg:aspect-auto"
               >
                 <div className="text-3xl mb-4">{category.icon}</div>
                 <h3 className="text-xl font-semibold">{category.name}</h3>
