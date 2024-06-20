@@ -1,26 +1,26 @@
 import {
+  pgEnum,
   boolean,
   decimal,
   integer,
-  pgEnum,
   pgTable,
   serial,
   text,
   timestamp,
 } from 'drizzle-orm/pg-core';
-import { clients } from './clients-schema';
+import { lawyers } from './lawyers-schema';
 
-export const statusEnum = pgEnum('status', ['open', 'working', 'closed']);
+export const statusEnum = pgEnum('status', ['sent', 'hired']);
 
-export const cases = pgTable('cases', {
-  caseId: serial('case_id').primaryKey(),
+export const proposals = pgTable('proposals', {
+  proposalId: serial('proposal_id').primaryKey(),
   title: text('title'),
   description: text('description').notNull(),
-  budget: decimal('budget'),
+  amount: decimal('amount').notNull(),
   status: statusEnum('status').notNull(),
-  clientId: integer('client_id')
+  lawyerId: integer('lawyer_id')
     .notNull()
-    .references(() => clients.clientId, { onDelete: 'cascade' }),
+    .references(() => lawyers.lawyerId, { onDelete: 'cascade' }),
   createdAt: timestamp('created_at').notNull().defaultNow(),
   updatedAt: timestamp('updated_at').notNull().$onUpdate(() => new Date()),
   isDeleted: boolean('is_deleted').notNull().default(false),
