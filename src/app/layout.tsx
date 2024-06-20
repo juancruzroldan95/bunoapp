@@ -5,7 +5,7 @@ import PageHeader from '@/components/page-header';
 
 export const metadata: Metadata = {
   title: 'Buno',
-  // description: "Encontrá a tu abogado de confianza",
+  description: 'Encontrá a tu abogado de confianza',
 };
 
 export default function RootLayout({

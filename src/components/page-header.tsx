@@ -25,9 +25,9 @@ export default function PageHeader() {
   };
 
   return (
-    <header className="w-full sticky top-0 z-40">
-      <section className="xl:max-w-7xl m-auto p-6 flex justify-between items-center">
-        <div className="flex items-center">
+    <header className="w-full sticky top-0 z-40 bg-white">
+      <section className="xl:max-w-7xl m-auto p-4 flex justify-between items-center">
+        <div className="flex items-center w-[258px]">
           <Link href="/">
             <Image
               src="/buno-coffee-bar-transparent-2.png"
@@ -66,12 +66,14 @@ export default function PageHeader() {
           </NavigationMenuList>
         </NavigationMenu>
 
-        <div className="hidden md:block space-x-4">
-          <Link href="/login">
-            <Button variant="outline">Iniciar sesión</Button>
-          </Link>
+        <div className="hidden md:flex space-x-4">
           <Link href="/sign-up">
-            <Button variant="default">Registrate</Button>
+            <Button variant="default" className="text-md">
+              Publicá tu caso
+            </Button>
+          </Link>
+          <Link href="/login">
+            <Button variant="ghost">Iniciar sesión</Button>
           </Link>
         </div>
       </section>

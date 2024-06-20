@@ -11,24 +11,24 @@ export default function MobileMenu({ onClick }: { onClick: () => void }) {
     >
       <nav
         onClick={onClick}
-        className="flex flex-col min-h-screen items-center py-8"
+        className="flex flex-col min-h-screen items-center"
         aria-label="mobile"
       >
         <Link
           href="/our-lawyer"
-          className="w-full text-center py-6 hover:opacity-90"
+          className="w-full py-6 text-center hover:opacity-90 bg-slate-100"
         >
           Nuestros abogados
         </Link>
         <Link
           href="/for-lawyers"
-          className="w-full text-center py-6 hover:opacity-90"
+          className="w-full py-6 text-center hover:opacity-90 bg-slate-100"
         >
           Para abogados
         </Link>
         <Link
           href="/about-us"
-          className="w-full text-center py-6 hover:opacity-90"
+          className="w-full py-6 text-center hover:opacity-90 bg-slate-100"
         >
           Conocenos
         </Link>
