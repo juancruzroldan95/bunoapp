@@ -13,6 +13,7 @@ import {
 import { Button } from './ui/button';
 import HamburgerBtn from './hamburger-btn';
 import MobileMenu from './mobile-menu';
+import { CreateCaseModal } from './CreateCaseModal';
 
 export default function PageHeader() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -43,6 +44,13 @@ export default function PageHeader() {
         <NavigationMenu className="hidden md:block">
           <NavigationMenuList>
             <NavigationMenuItem>
+              <Link href="/howitworks" legacyBehavior passHref>
+                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                  Cómo funciona
+                </NavigationMenuLink>
+              </Link>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
               <Link href="/our-lawyers" legacyBehavior passHref>
                 <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                   Nuestros abogados
@@ -56,22 +64,11 @@ export default function PageHeader() {
                 </NavigationMenuLink>
               </Link>
             </NavigationMenuItem>
-            <NavigationMenuItem>
-              <Link href="/about-us" legacyBehavior passHref>
-                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                  Conocenos
-                </NavigationMenuLink>
-              </Link>
-            </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
 
         <div className="hidden md:flex space-x-4">
-          <Link href="/sign-up">
-            <Button variant="default" className="text-md">
-              Publicá tu caso
-            </Button>
-          </Link>
+          <CreateCaseModal />
           <Link href="/login">
             <Button variant="ghost">Iniciar sesión</Button>
           </Link>

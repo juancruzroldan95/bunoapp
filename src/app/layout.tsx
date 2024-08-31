@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { lusitana } from '@/app/ui/fonts';
 import './globals.css';
 import PageHeader from '@/components/page-header';
+import { Toaster } from '@/components/ui/toaster';
 
 export const metadata: Metadata = {
   title: 'Buno',
@@ -15,7 +16,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${lusitana.className} antialiased`}>
         <PageHeader />
-        {children}
+        <main>{children}</main>
+        <Toaster />
       </body>
     </html>
   );

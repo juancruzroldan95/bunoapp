@@ -4,5 +4,7 @@
   "prettier.jsxSingleQuote": true,
   "prettier.configPath": ".prettierrc",
   "prettier.singleQuote": true,
-  "prettier.requireConfig": true
+  "prettier.requireConfig": true,
+  "editor.formatOnPaste": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
 }
