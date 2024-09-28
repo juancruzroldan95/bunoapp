@@ -1,68 +1,61 @@
-import Image from 'next/image';
-import { inter, lusitana } from './ui/fonts';
-import { Button } from '@/components/ui/button';
+"use client"
+
+import Image from "next/image"
+import { inter, lusitana } from "./ui/fonts"
+import { Button } from "@/components/ui/button"
+import { Dialog, DialogTrigger } from "@/components/ui/dialog"
+import { CreateCaseModal } from "@/components/CreateCaseModal"
 
 const legalCategories = [
-  { name: 'Familia', icon: '👪' },
-  { name: 'Penal', icon: '⚖️' },
-  { name: 'Corporativo', icon: '🏢' },
-  { name: 'Propiedad', icon: '💡' },
-  { name: 'Migraciones', icon: '🛂' },
-  { name: 'Trabajo', icon: '💼' },
-  { name: 'Desalojo', icon: '🏡' },
-  { name: 'Patria potestad', icon: '🌳' },
-];
+  { name: "Familia", icon: "👪" },
+  { name: "Penal", icon: "⚖️" },
+  { name: "Corporativo", icon: "🏢" },
+  { name: "Propiedad", icon: "💡" },
+  { name: "Migraciones", icon: "🛂" },
+  { name: "Trabajo", icon: "💼" },
+  { name: "Desalojo", icon: "🏡" },
+  { name: "Patria potestad", icon: "🌳" },
+]
 
 export default function HomePage() {
   return (
     <main className="mx-auto">
-      <section
-        id="hero"
-        className="py-12 bg-slate-800 flex flex-col justify-center items-center"
-      >
+      <section id="hero" className="py-12 bg-slate-800 flex flex-col justify-center items-center">
         <div className="lg:w-1/2 px-4">
-          <h2
-            className={`${inter.className} text-4xl font-bold text-center text-slate-100`}
-          >
+          <h2 className={`${inter.className} text-4xl font-bold text-center text-slate-100`}>
             <strong>Bienvenido a Buno</strong>
           </h2>
           <p className="text-2xl mt-4 text-center text-slate-100">
-            Ya sea que necesites una consulta única o un departamento legal
-            independiente completo, la red de abogados experimentados de Buno lo
-            tiene cubierto.
+            Ya sea que necesites una consulta única o un departamento legal independiente completo, la red de abogados
+            experimentados de Buno lo tiene cubierto.
           </p>
           <div className="mt-4 lg:flex lg:flex-row justify-center items-center">
-            <p className="text-2xl font-bold text-center text-slate-100">
-              ¿De dónde sos?
-            </p>
+            <p className="text-2xl font-bold text-center text-slate-100">¿De dónde sos?</p>
             <div className="flex justify-center mt-2 lg:m-0">
-              <Button
-                size="lg"
-                variant="outline"
-                className="text-xl font-bold mx-2"
-              >
-                CABA
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="text-xl font-bold mx-2"
-              >
-                Provincia
-              </Button>
+              <Dialog>
+                <DialogTrigger asChild>
+                  <Button size="lg" variant="outline" className="text-xl font-bold mx-2">
+                    CABA
+                  </Button>
+                </DialogTrigger>
+                <CreateCaseModal selectedLocation="CABA" />
+              </Dialog>
+              <Dialog>
+                <DialogTrigger asChild>
+                  <Button size="lg" variant="outline" className="text-xl font-bold mx-2">
+                    Provincia
+                  </Button>
+                </DialogTrigger>
+                <CreateCaseModal selectedLocation="Provincia" />
+              </Dialog>
             </div>
           </div>
         </div>
       </section>
 
-      <section
-        id="legal-areas"
-        className="py-12 bg-slate-100 flex flex-col justify-center items-center"
-      >
+      <section id="legal-areas" className="py-12 flex flex-col justify-center items-center">
         <div className="">
-          <h2 className="text-3xl font-bold text-center mb-8">
-            Nuestras áreas legales
-          </h2>
+          <h2 className="text-3xl font-bold text-center mb-8">Nuestras áreas legales</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {legalCategories.map((category, index) => (
               <div
@@ -77,5 +70,5 @@ export default function HomePage() {
         </div>
       </section>
     </main>
-  );
+  )
 }

@@ -1,29 +1,30 @@
-'use client';
+"use client"
 
-import React, { useState } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
+import React, { useState } from "react"
+import Image from "next/image"
+import Link from "next/link"
 import {
   NavigationMenu,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
   navigationMenuTriggerStyle,
-} from './ui/navigation-menu';
-import { Button } from './ui/button';
-import HamburgerBtn from './hamburger-btn';
-import MobileMenu from './mobile-menu';
-import { CreateCaseModal } from './CreateCaseModal';
+} from "./ui/navigation-menu"
+import { Button } from "./ui/button"
+import HamburgerBtn from "./hamburger-btn"
+import MobileMenu from "./mobile-menu"
+import { CreateCaseModal } from "./CreateCaseModal"
+import { Dialog, DialogContent, DialogHeader, DialogTrigger } from "./ui/dialog"
 
 export default function PageHeader() {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [toggleBtn, setToggleBtn] = useState('');
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [toggleBtn, setToggleBtn] = useState("")
 
   const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-    if (!toggleBtn) setToggleBtn('toggle-btn');
-    else setToggleBtn('');
-  };
+    setIsMobileMenuOpen(!isMobileMenuOpen)
+    if (!toggleBtn) setToggleBtn("toggle-btn")
+    else setToggleBtn("")
+  }
 
   return (
     <header className="w-full sticky top-0 z-40 bg-white">
@@ -68,7 +69,14 @@ export default function PageHeader() {
         </NavigationMenu>
 
         <div className="hidden md:flex space-x-4">
-          <CreateCaseModal />
+          <Dialog>
+            <DialogTrigger asChild>
+              <Button variant="default" className="text-md">
+                Publicá tu caso
+              </Button>
+            </DialogTrigger>
+            <CreateCaseModal />
+          </Dialog>
           <Link href="/login">
             <Button variant="ghost">Iniciar sesión</Button>
           </Link>
@@ -76,5 +84,5 @@ export default function PageHeader() {
       </section>
       {isMobileMenuOpen && <MobileMenu onClick={toggleMobileMenu} />}
     </header>
-  );
+  )
 }
