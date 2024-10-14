@@ -131,7 +131,7 @@ export default function HomePage() {
                   className={`${inter.className} text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-5xl`}
                 >
                   <span className="block xl:inline">Encontrá a tu abogado</span>{" "}
-                  <span className="block text-indigo-600 xl:inline">de confianza</span>
+                  <span className="block text-primary xl:inline">de confianza</span>
                 </h1>
                 <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
                   Ya sea que necesites una consulta única o un departamento legal independiente completo, la red de
@@ -160,13 +160,13 @@ export default function HomePage() {
         </div>
       </section>
       {/* Services */}
-      <section className="py-12 bg-gray-50">
+      <section className="py-12 bg-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="lg:text-center">
-            <h2 className="text-base text-indigo-600 font-semibold tracking-wide uppercase">Servicios</h2>
-            <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+            <h3 className="text-base text-primary font-semibold tracking-wide uppercase">Servicios</h3>
+            <h2 className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
               Nuestras áreas legales
-            </p>
+            </h2>
             <p className="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
               Nuestra red de abogados cubre cualquier necesidad legal que tengas.
             </p>
@@ -177,7 +177,7 @@ export default function HomePage() {
               {services.map((service) => (
                 <Card key={service.title}>
                   <CardHeader className="pb-3">
-                    <service.icon className="h-8 w-8 text-indigo-600" />
+                    <service.icon className="h-8 w-8 text-primary" />
                     <CardTitle className="mt-2">{service.title}</CardTitle>
                   </CardHeader>
                   <CardContent className="pb-3">
@@ -193,7 +193,7 @@ export default function HomePage() {
       <section className="py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="lg:text-center">
-            <h2 className="text-base text-indigo-600 font-semibold tracking-wide uppercase">Cómo funciona</h2>
+            <h2 className="text-base text-primary font-semibold tracking-wide uppercase">Cómo funciona</h2>
             <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
               Asistencia legal de forma simple
             </p>
@@ -207,11 +207,8 @@ export default function HomePage() {
               {steps.map((step, index) => (
                 <Card key={step.title}>
                   <CardHeader>
-                    {/* <div className="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
-                      <step.icon className="h-6 w-6" />
-                    </div> */}
                     <CardTitle className="mt-2 text-xl">
-                      <span className="text-indigo-600 mr-2">{index + 1}.</span>
+                      <span className="text-primary mr-2">{index + 1}.</span>
                       {step.title}
                     </CardTitle>
                   </CardHeader>
@@ -229,7 +226,7 @@ export default function HomePage() {
       {/* <section className="py-12 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="lg:text-center">
-            <h2 className="text-base text-indigo-600 font-semibold tracking-wide uppercase">Testimonials</h2>
+            <h2 className="text-base text-primary font-semibold tracking-wide uppercase">Testimonials</h2>
             <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
               Trusted by businesses of all sizes
             </p>
