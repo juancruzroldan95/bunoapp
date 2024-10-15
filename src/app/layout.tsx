@@ -1,7 +1,7 @@
 import "./globals.css"
 import type { Metadata } from "next"
 import { lusitana } from "@/app/ui/fonts"
-import PageHeader from "@/components/page-header"
+import Header from "@/components/Header"
 import Footer from "@/components/Footer"
 import { Toaster } from "@/components/ui/toaster"
 
@@ -14,7 +14,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="es">
       <body className={`${lusitana.className} antialiased`}>
-        <PageHeader />
+        <Header />
         <main>{children}</main>
         <Footer />
         <Toaster />

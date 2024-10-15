@@ -48,11 +48,11 @@ export default function ForLawyersPage() {
           <h1 className={`${inter.className} text-5xl font-bold text-center text-slate-800`}>
             <strong>Crecé profesionalmente</strong>
           </h1>
-          <p className="text-2xl mt-4 text-center text-slate-800">
+          <p className="text-2xl mt-5 text-center text-slate-800">
             Unite a la mejor comunidad de abogados de Buenos Aires, aumentá tu cartera de clientes y generá más
             ingresos.
           </p>
-          <div className="mt-4 flex justify-center">
+          <div className="mt-5 flex justify-center">
             <Button size="lg" className="text-xl font-bold">
               Aplicá como abogado
             </Button>

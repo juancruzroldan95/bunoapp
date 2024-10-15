@@ -16,7 +16,7 @@ import MobileMenu from "./mobile-menu"
 import { CreateCaseModal } from "./CreateCaseModal"
 import { Dialog, DialogContent, DialogHeader, DialogTrigger } from "./ui/dialog"
 
-export default function PageHeader() {
+export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [toggleBtn, setToggleBtn] = useState("")
 
@@ -31,12 +31,7 @@ export default function PageHeader() {
       <section className="xl:max-w-7xl m-auto p-4 flex justify-between items-center">
         <div className="flex items-center w-[258px]">
           <Link href="/">
-            <Image
-              src="/buno-coffee-bar-transparent-2.png"
-              alt="Logo"
-              width={140}
-              height={40}
-            />
+            <Image src="/buno-coffee-bar-transparent-2.png" alt="Logo" width={140} height={40} />
           </Link>
         </div>
 
@@ -46,23 +41,17 @@ export default function PageHeader() {
           <NavigationMenuList>
             <NavigationMenuItem>
               <Link href="/howitworks" legacyBehavior passHref>
-                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                  Cómo funciona
-                </NavigationMenuLink>
+                <NavigationMenuLink className={navigationMenuTriggerStyle()}>Cómo funciona</NavigationMenuLink>
               </Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
               <Link href="/our-lawyers" legacyBehavior passHref>
-                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                  Nuestros abogados
-                </NavigationMenuLink>
+                <NavigationMenuLink className={navigationMenuTriggerStyle()}>Nuestros abogados</NavigationMenuLink>
               </Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
               <Link href="/for-lawyers" legacyBehavior passHref>
-                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                  Para abogados
-                </NavigationMenuLink>
+                <NavigationMenuLink className={navigationMenuTriggerStyle()}>Para abogados</NavigationMenuLink>
               </Link>
             </NavigationMenuItem>
           </NavigationMenuList>
